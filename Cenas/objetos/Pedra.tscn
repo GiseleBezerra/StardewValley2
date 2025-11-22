@@ -1,0 +1,24 @@
+[gd_scene load_steps=5 format=3 uid="uid://cidhtd48ger78"]
+
+[ext_resource type="PackedScene" uid="uid://wbpqk5wfc5ln" path="res://Cenas/CenasdeBase/objeto_de_base.tscn" id="1_1lfde"]
+[ext_resource type="Texture2D" uid="uid://dysu0mjt7pvcv" path="res://Outdoor decoration/Outdoor_Decor_Free.png" id="2_4f43k"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_tbxev"]
+radius = 11.0454
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_km531"]
+radius = 9.0
+
+[node name="ObjetoDeBase" instance=ExtResource("1_1lfde")]
+arma_que_destroi = "_picareta"
+
+[node name="Colisao" parent="." index="0"]
+shape = SubResource("CircleShape2D_tbxev")
+
+[node name="ColisaoFisica" parent="CorpoFisico" index="0"]
+shape = SubResource("CircleShape2D_km531")
+
+[node name="Textura" parent="." index="2"]
+texture = ExtResource("2_4f43k")
+region_enabled = true
+region_rect = Rect2(0, 48, 16, 16)

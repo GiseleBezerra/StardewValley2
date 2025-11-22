@@ -1,0 +1,27 @@
+[gd_scene load_steps=5 format=3 uid="uid://b3u60503pfmy7"]
+
+[ext_resource type="PackedScene" uid="uid://wbpqk5wfc5ln" path="res://Cenas/CenasdeBase/objeto_de_base.tscn" id="1_bie6w"]
+[ext_resource type="Texture2D" uid="uid://jaxt60r0ibma" path="res://Outdoor decoration/Oak_Tree_Small.png" id="2_0leyx"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_jhs5n"]
+radius = 4.0
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_jw00g"]
+radius = 3.0
+
+[node name="ArvoreMenor" instance=ExtResource("1_bie6w")]
+arma_que_destroi = "_machado"
+
+[node name="Colisao" parent="." index="0"]
+position = Vector2(0, -1)
+shape = SubResource("CircleShape2D_jhs5n")
+
+[node name="ColisaoFisica" parent="CorpoFisico" index="0"]
+position = Vector2(0, -1)
+shape = SubResource("CircleShape2D_jw00g")
+
+[node name="Textura" parent="." index="2"]
+position = Vector2(0, -8)
+texture = ExtResource("2_0leyx")
+hframes = 3
+frame = 1

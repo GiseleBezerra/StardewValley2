@@ -1,0 +1,63 @@
+[gd_scene load_steps=5 format=3 uid="uid://4tybjl7gq023"]
+
+[ext_resource type="PackedScene" uid="uid://nhtqab8jw87p" path="res://Cenas/interface/tela_de_game_over.tscn" id="1_0xsvi"]
+[ext_resource type="PackedScene" uid="uid://b4kl515s51cud" path="res://Cenas/animais/ovelha.tscn" id="2_qd5xd"]
+[ext_resource type="PackedScene" uid="uid://nl2cbnqrykdr" path="res://Cenas/objetos/arvore.tscn" id="3_0bmxo"]
+[ext_resource type="PackedScene" uid="uid://tmi3vlct0ywm" path="res://Cenas/Inimigos/esqueleto.tscn" id="4_dpets"]
+
+[node name="TelaDeMenu" instance=ExtResource("1_0xsvi")]
+offset_left = -4.0
+offset_top = 5.0
+offset_right = -4.0
+offset_bottom = 5.0
+
+[node name="Terreno" parent="." index="0"]
+position = Vector2(30, 70)
+
+[node name="Ovelha" parent="Terreno" index="6" instance=ExtResource("2_qd5xd")]
+position = Vector2(65, 18)
+
+[node name="Arvore" parent="Terreno" index="7" instance=ExtResource("3_0bmxo")]
+position = Vector2(1, -19)
+
+[node name="Arvore2" parent="Terreno" index="8" instance=ExtResource("3_0bmxo")]
+position = Vector2(234, -24)
+
+[node name="Esqueleto" parent="Terreno" index="9" instance=ExtResource("4_dpets")]
+position = Vector2(192, 65)
+
+[node name="Mascara" parent="." index="1"]
+offset_left = 0.0
+offset_top = -6.0
+offset_right = 6.0
+
+[node name="Titulo" parent="." index="2"]
+anchors_preset = 0
+anchor_left = 0.0
+anchor_right = 0.0
+offset_left = 16.0
+offset_top = 16.0
+offset_right = 311.0
+offset_bottom = 61.0
+grow_horizontal = 1
+text = "SwordFantansy"
+
+[node name="HContanier" parent="." index="3"]
+anchors_preset = 2
+anchor_left = 0.0
+anchor_top = 1.0
+anchor_right = 0.0
+anchor_bottom = 1.0
+offset_left = 16.0
+offset_top = -78.0
+offset_right = 125.0
+offset_bottom = -16.0
+grow_horizontal = 1
+grow_vertical = 0
+
+[node name="Reiniciar" parent="HContanier" index="0"]
+text = "Novo Jogo"
+alignment = 0
+
+[node name="Sair" parent="HContanier" index="1"]
+alignment = 0

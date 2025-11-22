@@ -1,0 +1,17 @@
+[gd_scene load_steps=4 format=3 uid="uid://brhiwacp1mvoh"]
+
+[ext_resource type="PackedScene" uid="uid://bey81h018mnom" path="res://Cenas/CenasdeBase/animal_de_base.tscn" id="1_38lu3"]
+[ext_resource type="Texture2D" uid="uid://d3xa27lfk23p5" path="res://Entidades/Animals/Pig/Pig.png" id="2_5i7k6"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_3bxjj"]
+radius = 6.08276
+
+[node name="Porco" instance=ExtResource("1_38lu3")]
+
+[node name="Collision" parent="." index="0"]
+position = Vector2(0, -2)
+shape = SubResource("CircleShape2D_3bxjj")
+
+[node name="Texture" parent="." index="1"]
+position = Vector2(1, -6)
+texture = ExtResource("2_5i7k6")

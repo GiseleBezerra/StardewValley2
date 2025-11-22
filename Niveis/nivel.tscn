@@ -1,0 +1,112 @@
+[gd_scene load_steps=15 format=3 uid="uid://chpdchisgcbun"]
+
+[ext_resource type="PackedScene" uid="uid://bav1yrrvemump" path="res://Cenas/terreno/terreno.tscn" id="1_sip8w"]
+[ext_resource type="PackedScene" uid="uid://bpbdbk5vfaetk" path="res://Cenas/jogador/player.tscn" id="2_52qt5"]
+[ext_resource type="PackedScene" uid="uid://nl2cbnqrykdr" path="res://Cenas/objetos/arvore.tscn" id="3_5153j"]
+[ext_resource type="PackedScene" uid="uid://cidhtd48ger78" path="res://Cenas/objetos/Pedra.tscn" id="4_in6ij"]
+[ext_resource type="PackedScene" uid="uid://b3u60503pfmy7" path="res://Cenas/objetos/arvore_menor.tscn" id="5_3c6mh"]
+[ext_resource type="PackedScene" uid="uid://d37feifrv25k6" path="res://Cenas/objetos/bau.tscn" id="6_evn7c"]
+[ext_resource type="PackedScene" uid="uid://b4kl515s51cud" path="res://Cenas/animais/ovelha.tscn" id="7_70vgv"]
+[ext_resource type="PackedScene" uid="uid://b3noixyo7tgtm" path="res://Cenas/animais/vaca.tscn" id="8_iddp2"]
+[ext_resource type="PackedScene" uid="uid://brhiwacp1mvoh" path="res://Cenas/animais/porco.tscn" id="9_7do76"]
+[ext_resource type="PackedScene" uid="uid://bvl8ksji7h5t5" path="res://Cenas/Inimigos/slime.tscn" id="10_fhs54"]
+[ext_resource type="PackedScene" uid="uid://tmi3vlct0ywm" path="res://Cenas/Inimigos/esqueleto.tscn" id="11_qcgjm"]
+[ext_resource type="Script" uid="uid://bokfhn3sedbt8" path="res://Cenas/interface/interface.gd" id="12_hr1ri"]
+
+[sub_resource type="LabelSettings" id="LabelSettings_paie3"]
+font_size = 8
+
+[sub_resource type="LabelSettings" id="LabelSettings_7csjc"]
+font_size = 8
+
+[node name="Nivel" type="Node2D"]
+
+[node name="Terreno" parent="." instance=ExtResource("1_sip8w")]
+position = Vector2(36, 59)
+
+[node name="Ysort" type="Node2D" parent="."]
+y_sort_enabled = true
+
+[node name="Player" parent="Ysort" node_paths=PackedStringArray("_interface") instance=ExtResource("2_52qt5")]
+position = Vector2(579, 42)
+_interface = NodePath("../../Interface")
+
+[node name="Arvore" parent="Ysort" instance=ExtResource("3_5153j")]
+position = Vector2(578, 185)
+
+[node name="Arvore5" parent="Ysort" instance=ExtResource("3_5153j")]
+position = Vector2(896, 226)
+
+[node name="Arvore6" parent="Ysort" instance=ExtResource("3_5153j")]
+position = Vector2(826, 290)
+
+[node name="Arvore3" parent="Ysort" instance=ExtResource("3_5153j")]
+position = Vector2(784, 188)
+
+[node name="Arvore4" parent="Ysort" instance=ExtResource("3_5153j")]
+position = Vector2(670, 252)
+
+[node name="ArvoreMenor" parent="Ysort" instance=ExtResource("5_3c6mh")]
+position = Vector2(611, 288)
+
+[node name="ArvoreMenor2" parent="Ysort" instance=ExtResource("5_3c6mh")]
+position = Vector2(549, 231)
+
+[node name="ArvoreMenor3" parent="Ysort" instance=ExtResource("5_3c6mh")]
+position = Vector2(690, 23)
+
+[node name="ArvoreMenor4" parent="Ysort" instance=ExtResource("5_3c6mh")]
+position = Vector2(555, 70)
+
+[node name="ObjetoDeBase" parent="Ysort" instance=ExtResource("4_in6ij")]
+position = Vector2(639, 153)
+
+[node name="ObjetoDeBase2" parent="Ysort" instance=ExtResource("4_in6ij")]
+position = Vector2(571, 126)
+
+[node name="ObjetoDeBase3" parent="Ysort" instance=ExtResource("4_in6ij")]
+position = Vector2(627, 195)
+
+[node name="Bau" parent="Ysort" instance=ExtResource("6_evn7c")]
+position = Vector2(799, 250)
+
+[node name="Bau2" parent="Ysort" instance=ExtResource("6_evn7c")]
+position = Vector2(859, 249)
+
+[node name="Bau3" parent="Ysort" instance=ExtResource("6_evn7c")]
+position = Vector2(653, 217)
+
+[node name="Ovelha" parent="Ysort" instance=ExtResource("7_70vgv")]
+position = Vector2(873, 280)
+
+[node name="Vaca" parent="Ysort" instance=ExtResource("8_iddp2")]
+position = Vector2(546, 289)
+
+[node name="Porco" parent="Ysort" instance=ExtResource("9_7do76")]
+position = Vector2(720, 95)
+
+[node name="Slime" parent="Ysort" instance=ExtResource("10_fhs54")]
+position = Vector2(711, 210)
+
+[node name="Esqueleto" parent="Ysort" instance=ExtResource("11_qcgjm")]
+position = Vector2(687, 283)
+
+[node name="Interface" type="CanvasLayer" parent="."]
+script = ExtResource("12_hr1ri")
+
+[node name="VContainer" type="VBoxContainer" parent="Interface"]
+offset_left = 9.0
+offset_top = 8.0
+offset_right = 160.0
+offset_bottom = 58.0
+theme_override_constants/separation = 0
+
+[node name="ArmaAtual" type="Label" parent="Interface/VContainer"]
+layout_mode = 2
+text = "Arma Atual: Espada"
+label_settings = SubResource("LabelSettings_paie3")
+
+[node name="Vida" type="Label" parent="Interface/VContainer"]
+layout_mode = 2
+text = "Vida: 10/10"
+label_settings = SubResource("LabelSettings_7csjc")

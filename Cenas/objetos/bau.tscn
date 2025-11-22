@@ -1,0 +1,25 @@
+[gd_scene load_steps=5 format=3 uid="uid://d37feifrv25k6"]
+
+[ext_resource type="PackedScene" uid="uid://wbpqk5wfc5ln" path="res://Cenas/CenasdeBase/objeto_de_base.tscn" id="1_ne7ni"]
+[ext_resource type="Texture2D" uid="uid://bhpctrthucvpk" path="res://Outdoor decoration/Chest.png" id="2_xuosh"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_3imtf"]
+radius = 9.0
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_12g6f"]
+size = Vector2(14, 12.5)
+
+[node name="Bau" instance=ExtResource("1_ne7ni")]
+arma_que_destroi = "_machado"
+
+[node name="Colisao" parent="." index="0"]
+position = Vector2(0, -7)
+shape = SubResource("CircleShape2D_3imtf")
+
+[node name="ColisaoFisica" parent="CorpoFisico" index="0"]
+position = Vector2(0, -6.75)
+shape = SubResource("RectangleShape2D_12g6f")
+
+[node name="Textura" parent="." index="2"]
+position = Vector2(0, -7)
+texture = ExtResource("2_xuosh")

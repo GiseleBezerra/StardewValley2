@@ -1,0 +1,18 @@
+[gd_scene load_steps=4 format=3 uid="uid://b3noixyo7tgtm"]
+
+[ext_resource type="PackedScene" uid="uid://bey81h018mnom" path="res://Cenas/CenasdeBase/animal_de_base.tscn" id="1_dt08a"]
+[ext_resource type="Texture2D" uid="uid://cynmls1ley4t8" path="res://Entidades/Animals/Cow/Cow.png" id="2_kvylj"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_mug0e"]
+radius = 6.0
+
+[node name="Vaca" instance=ExtResource("1_dt08a")]
+self_modulate = Color(1, 1, 1, 1)
+
+[node name="Collision" parent="." index="0"]
+position = Vector2(0, -2)
+shape = SubResource("CircleShape2D_mug0e")
+
+[node name="Texture" parent="." index="1"]
+position = Vector2(1, -8)
+texture = ExtResource("2_kvylj")

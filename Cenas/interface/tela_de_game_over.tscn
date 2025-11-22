@@ -1,0 +1,123 @@
+[gd_scene load_steps=15 format=3 uid="uid://nhtqab8jw87p"]
+
+[ext_resource type="PackedScene" uid="uid://bav1yrrvemump" path="res://Cenas/terreno/terreno.tscn" id="1_ilnxl"]
+[ext_resource type="Script" path="res://Cenas/interface/tela_de_game_over.gd" id="1_vwbon"]
+
+[sub_resource type="LabelSettings" id="LabelSettings_15rds"]
+font_size = 32
+shadow_size = 2
+shadow_color = Color(0, 0, 0, 1)
+shadow_offset = Vector2(0, 2)
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_e0muu"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_rbp2b"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_x5xpc"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_htew2"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_axf30"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_hcvvb"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_a73nd"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_b1o85"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_6rfvo"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_2tpm4"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_m8v5h"]
+
+[node name="TelaDeGameOver" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_vwbon")
+
+[node name="Terreno" parent="." instance=ExtResource("1_ilnxl")]
+position = Vector2(-482, -4)
+
+[node name="Mascara" type="ColorRect" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 2.0
+offset_right = 2.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0.0352941, 0.0352941, 0.0352941, 0.4)
+
+[node name="Titulo" type="Label" parent="."]
+layout_mode = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -147.0
+offset_top = 42.0
+offset_right = 148.0
+offset_bottom = 87.0
+grow_horizontal = 2
+pivot_offset = Vector2(27, 10)
+text = "Você foi derrotado!"
+label_settings = SubResource("LabelSettings_15rds")
+
+[node name="HContanier" type="VBoxContainer" parent="."]
+layout_mode = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -58.0
+offset_top = 96.0
+offset_right = 51.0
+offset_bottom = 158.0
+grow_horizontal = 2
+theme_override_constants/separation = 5
+
+[node name="Reiniciar" type="Button" parent="HContanier"]
+layout_mode = 2
+theme_override_colors/font_hover_color = Color(0.745098, 0.85098, 0, 1)
+theme_override_colors/font_pressed_color = Color(0, 0, 0, 1)
+theme_override_colors/font_color = Color(0.973535, 0.973535, 0.973535, 1)
+theme_override_styles/focus = SubResource("StyleBoxEmpty_e0muu")
+theme_override_styles/disabled_mirrored = SubResource("StyleBoxEmpty_rbp2b")
+theme_override_styles/disabled = SubResource("StyleBoxEmpty_x5xpc")
+theme_override_styles/hover_pressed_mirrored = SubResource("StyleBoxEmpty_htew2")
+theme_override_styles/hover_pressed = SubResource("StyleBoxEmpty_axf30")
+theme_override_styles/hover_mirrored = SubResource("StyleBoxEmpty_hcvvb")
+theme_override_styles/hover = SubResource("StyleBoxEmpty_a73nd")
+theme_override_styles/pressed_mirrored = SubResource("StyleBoxEmpty_b1o85")
+theme_override_styles/pressed = SubResource("StyleBoxEmpty_6rfvo")
+theme_override_styles/normal_mirrored = SubResource("StyleBoxEmpty_2tpm4")
+theme_override_styles/normal = SubResource("StyleBoxEmpty_m8v5h")
+text = "Reniciar"
+flat = true
+
+[node name="Sair" type="Button" parent="HContanier"]
+layout_mode = 2
+theme_override_colors/font_hover_color = Color(0.745098, 0.85098, 0, 1)
+theme_override_colors/font_pressed_color = Color(0, 0, 0, 1)
+theme_override_colors/font_color = Color(0.973535, 0.973535, 0.973535, 1)
+theme_override_styles/focus = SubResource("StyleBoxEmpty_e0muu")
+theme_override_styles/disabled_mirrored = SubResource("StyleBoxEmpty_rbp2b")
+theme_override_styles/disabled = SubResource("StyleBoxEmpty_x5xpc")
+theme_override_styles/hover_pressed_mirrored = SubResource("StyleBoxEmpty_htew2")
+theme_override_styles/hover_pressed = SubResource("StyleBoxEmpty_axf30")
+theme_override_styles/hover_mirrored = SubResource("StyleBoxEmpty_hcvvb")
+theme_override_styles/hover = SubResource("StyleBoxEmpty_a73nd")
+theme_override_styles/pressed_mirrored = SubResource("StyleBoxEmpty_b1o85")
+theme_override_styles/pressed = SubResource("StyleBoxEmpty_6rfvo")
+theme_override_styles/normal_mirrored = SubResource("StyleBoxEmpty_2tpm4")
+theme_override_styles/normal = SubResource("StyleBoxEmpty_m8v5h")
+text = "Sair
+"
+flat = true
+
+[connection signal="pressed" from="HContanier/Reiniciar" to="." method="_on_reiniciar_pressed"]
+[connection signal="pressed" from="HContanier/Sair" to="." method="_on_sair_pressed"]

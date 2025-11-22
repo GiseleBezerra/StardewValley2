@@ -1,0 +1,56 @@
+[gd_scene load_steps=5 format=3 uid="uid://wbpqk5wfc5ln"]
+
+[ext_resource type="Script" path="res://Scripts/objeto_de_base.gd" id="1_y3lvw"]
+
+[sub_resource type="Animation" id="Animation_oshvw"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:modulate")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Color(1, 1, 1, 1)]
+}
+
+[sub_resource type="Animation" id="Animation_3pp1w"]
+resource_name = "perdendo_vida"
+length = 0.2
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:modulate")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.2),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Color(1, 1, 1, 0.196078), Color(1, 1, 1, 1)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_8ofvg"]
+_data = {
+"RESET": SubResource("Animation_oshvw"),
+"perdendo_vida": SubResource("Animation_3pp1w")
+}
+
+[node name="ObjetoDeBase" type="Area2D" groups=["objetos"]]
+script = ExtResource("1_y3lvw")
+
+[node name="Colisao" type="CollisionShape2D" parent="."]
+
+[node name="CorpoFisico" type="StaticBody2D" parent="."]
+
+[node name="ColisaoFisica" type="CollisionShape2D" parent="CorpoFisico"]
+
+[node name="Textura" type="Sprite2D" parent="."]
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+libraries = {
+"": SubResource("AnimationLibrary_8ofvg")
+}

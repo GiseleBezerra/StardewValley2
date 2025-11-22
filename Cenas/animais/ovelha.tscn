@@ -1,0 +1,17 @@
+[gd_scene load_steps=4 format=3 uid="uid://b4kl515s51cud"]
+
+[ext_resource type="PackedScene" uid="uid://bey81h018mnom" path="res://Cenas/CenasdeBase/animal_de_base.tscn" id="1_xon43"]
+[ext_resource type="Texture2D" uid="uid://bf83rg7ghn8jw" path="res://Entidades/Animals/Sheep/Sheep.png" id="2_i42ps"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_l38xt"]
+radius = 5.0
+
+[node name="Ovelha" instance=ExtResource("1_xon43")]
+
+[node name="Collision" parent="." index="0"]
+position = Vector2(0, -1)
+shape = SubResource("CircleShape2D_l38xt")
+
+[node name="Texture" parent="." index="1"]
+position = Vector2(0, -6)
+texture = ExtResource("2_i42ps")
