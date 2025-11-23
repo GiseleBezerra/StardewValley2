@@ -1,6 +1,6 @@
-[gd_scene load_steps=40 format=3 uid="uid://bpbdbk5vfaetk"]
+[gd_scene load_steps=41 format=3 uid="uid://bpbdbk5vfaetk"]
 
-[ext_resource type="Script" path="res://Scripts/player.gd" id="1_dov27"]
+[ext_resource type="Script" uid="uid://buwm2fle4t6g5" path="res://Scripts/player.gd" id="1_dov27"]
 [ext_resource type="Texture2D" uid="uid://faieqs80q7qx" path="res://Player/Player.png" id="2_w1xui"]
 [ext_resource type="Texture2D" uid="uid://cf01is4uv32x4" path="res://Player/Player_Actions.png" id="3_p2nbj"]
 
@@ -2030,36 +2030,36 @@ tracks/4/keys = {
 
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_pdhpf"]
 _data = {
-"RESET": SubResource("Animation_cauy2"),
-"atacar_enxada_baixo": SubResource("Animation_xdtxg"),
-"atacar_enxada_cima": SubResource("Animation_i2mp8"),
-"atacar_enxada_direita": SubResource("Animation_w62bi"),
-"atacar_enxada_esquerda": SubResource("Animation_2lryu"),
-"atacar_espada_baixo": SubResource("Animation_6eupj"),
-"atacar_espada_cima": SubResource("Animation_4ilxq"),
-"atacar_espada_direita": SubResource("Animation_gs6b8"),
-"atacar_espada_esquerda": SubResource("Animation_e2rvm"),
-"atacar_machado_baixo": SubResource("Animation_kymay"),
-"atacar_machado_cima": SubResource("Animation_1snbl"),
-"atacar_machado_direita": SubResource("Animation_swj7p"),
-"atacar_machado_esquerda": SubResource("Animation_ti6t2"),
-"atacar_picareta_baixo": SubResource("Animation_4a83i"),
-"atacar_picareta_cima": SubResource("Animation_exfq8"),
-"atacar_picareta_direita": SubResource("Animation_inm0r"),
-"atacar_picareta_esquerda": SubResource("Animation_nad6c"),
-"atacar_regador_baixo": SubResource("Animation_f2myk"),
-"atacar_regador_cima": SubResource("Animation_fsv38"),
-"atacar_regador_direita": SubResource("Animation_a1w66"),
-"atacar_regador_esquerda": SubResource("Animation_hqjt0"),
-"morte": SubResource("Animation_r2pvm"),
-"move_baixo": SubResource("Animation_mdvqt"),
-"move_cima": SubResource("Animation_n42hu"),
-"move_direita": SubResource("Animation_mrpin"),
-"move_esquerda": SubResource("Animation_4d6mo"),
-"parado_baixo": SubResource("Animation_snt7l"),
-"parado_cima": SubResource("Animation_vepco"),
-"parado_direita": SubResource("Animation_x62wu"),
-"parado_esquerda": SubResource("Animation_spas5")
+&"RESET": SubResource("Animation_cauy2"),
+&"atacar_enxada_baixo": SubResource("Animation_xdtxg"),
+&"atacar_enxada_cima": SubResource("Animation_i2mp8"),
+&"atacar_enxada_direita": SubResource("Animation_w62bi"),
+&"atacar_enxada_esquerda": SubResource("Animation_2lryu"),
+&"atacar_espada_baixo": SubResource("Animation_6eupj"),
+&"atacar_espada_cima": SubResource("Animation_4ilxq"),
+&"atacar_espada_direita": SubResource("Animation_gs6b8"),
+&"atacar_espada_esquerda": SubResource("Animation_e2rvm"),
+&"atacar_machado_baixo": SubResource("Animation_kymay"),
+&"atacar_machado_cima": SubResource("Animation_1snbl"),
+&"atacar_machado_direita": SubResource("Animation_swj7p"),
+&"atacar_machado_esquerda": SubResource("Animation_ti6t2"),
+&"atacar_picareta_baixo": SubResource("Animation_4a83i"),
+&"atacar_picareta_cima": SubResource("Animation_exfq8"),
+&"atacar_picareta_direita": SubResource("Animation_inm0r"),
+&"atacar_picareta_esquerda": SubResource("Animation_nad6c"),
+&"atacar_regador_baixo": SubResource("Animation_f2myk"),
+&"atacar_regador_cima": SubResource("Animation_fsv38"),
+&"atacar_regador_direita": SubResource("Animation_a1w66"),
+&"atacar_regador_esquerda": SubResource("Animation_hqjt0"),
+&"morte": SubResource("Animation_r2pvm"),
+&"move_baixo": SubResource("Animation_mdvqt"),
+&"move_cima": SubResource("Animation_n42hu"),
+&"move_direita": SubResource("Animation_mrpin"),
+&"move_esquerda": SubResource("Animation_4d6mo"),
+&"parado_baixo": SubResource("Animation_snt7l"),
+&"parado_cima": SubResource("Animation_vepco"),
+&"parado_direita": SubResource("Animation_x62wu"),
+&"parado_esquerda": SubResource("Animation_spas5")
 }
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_fcc17"]
@@ -2102,9 +2102,12 @@ tracks/0/keys = {
 
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_mjs0k"]
 _data = {
-"RESET": SubResource("Animation_1vxos"),
-"perdendo_vida": SubResource("Animation_1scag")
+&"RESET": SubResource("Animation_1vxos"),
+&"perdendo_vida": SubResource("Animation_1scag")
 }
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_yo17r"]
+radius = 4.0
 
 [node name="Player" type="CharacterBody2D" node_paths=PackedStringArray("_temporizador_de_acoes", "_area_de_ataque", "_texto_armar_atual") groups=["personagem"]]
 position = Vector2(0, -7)
@@ -2125,7 +2128,7 @@ frame = 54
 reset_on_save = false
 root_node = NodePath("../Texture")
 libraries = {
-"": SubResource("AnimationLibrary_pdhpf")
+&"": SubResource("AnimationLibrary_pdhpf")
 }
 
 [node name="Collision" type="CollisionShape2D" parent="."]
@@ -2164,8 +2167,12 @@ position_smoothing_speed = 4.0
 
 [node name="AnimadorVida" type="AnimationPlayer" parent="."]
 libraries = {
-"": SubResource("AnimationLibrary_mjs0k")
+&"": SubResource("AnimationLibrary_mjs0k")
 }
+
+[node name="ColisãoDoPersonagem" type="CollisionShape2D" parent="."]
+position = Vector2(-1, 7)
+shape = SubResource("CircleShape2D_yo17r")
 
 [connection signal="animation_finished" from="Animation" to="." method="_on_animation_animation_finished"]
 [connection signal="timeout" from="TemporizadorDeAcoes" to="." method="_on_temporizador_de_acoes_timeout"]
